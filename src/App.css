@@ -33,6 +33,7 @@ footer, header, hgroup, menu, nav, section {
 
 body {
     line-height: 1;
+    background: #f5f5f5;
 }
 
 ol, ul {
@@ -124,9 +125,13 @@ html {
 /**
  * Address `outline` inconsistency between Chrome and other browsers.
  */
+a {
+    text-decoration: none;
+    color: inherit;
+}
 
 a:focus {
-    outline: thin dotted;
+    outline: none;
 }
 
 /**
@@ -359,4 +364,28 @@ textarea {
     background: #ccc;
     color: #000;
     padding: 0.2em 0;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #000;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+body {
+    overflow-x: hidden;
 }
