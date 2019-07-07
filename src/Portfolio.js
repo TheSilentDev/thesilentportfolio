@@ -19,13 +19,12 @@ class Portfolio extends Component {
         <div className={css(styles.container)}>
           <div className={css(styles.project)}>
             <div className={css(styles.project_description)}>
-              <div className={css(styles.project_name)}>stackworth</div>
+              <div className={css(styles.project_name)}>
+                The Silent Portfolio
+              </div>
               <div className={css(styles.project_description_content)}>
                 {" "}
-                Stackworth was created to give junior developers the direction
-                that is needed to thrive within the industry. It allows for
-                developers to track their progress and the ability to track
-                their worth.{" "}
+                My Personal Portfolio{" "}
               </div>
             </div>
             <div className={css(styles.project_image_layout)}>
@@ -37,32 +36,32 @@ class Portfolio extends Component {
               >
                 VISIT:{" "}
               </span>{" "}
-              http://bit.ly/bwe0
+              <a href={"https://thesilentdev.me"}>TheSilentDev</a>
             </div>
           </div>
-          <div className={css(styles.project_alt)}>
-            <div className={css(styles.project_description)}>
-              <div className={css(styles.project_name)}>stackworth</div>
-              <div className={css(styles.project_description_content)}>
-                {" "}
-                Stackworth was created to give junior developers the direction
-                that is needed to thrive within the industry. It allows for
-                developers to track their progress and the ability to track
-                their worth.{" "}
-              </div>
-            </div>
-            <div className={css(styles.project_image_layout)}>
-              <img className={css(styles.project_image)} src={samplepic} />
-            </div>
-            <div className={css(styles.project_link_alt)}>
-              <span
-                style={{ color: "#000", fontSize: "14px", fontWeight: "bold" }}
-              >
-                VISIT:{" "}
-              </span>{" "}
-              http://bit.ly/bwe0
-            </div>
-          </div>
+          {/*<div className={css(styles.project_alt)}>*/}
+          {/*  <div className={css(styles.project_description)}>*/}
+          {/*    <div className={css(styles.project_name)}>stackworth</div>*/}
+          {/*    <div className={css(styles.project_description_content)}>*/}
+          {/*      {" "}*/}
+          {/*      Stackworth was created to give junior developers the direction*/}
+          {/*      that is needed to thrive within the industry. It allows for*/}
+          {/*      developers to track their progress and the ability to track*/}
+          {/*      their worth.{" "}*/}
+          {/*    </div>*/}
+          {/*  </div>*/}
+          {/*  <div className={css(styles.project_image_layout)}>*/}
+          {/*    <img className={css(styles.project_image)} src={samplepic} />*/}
+          {/*  </div>*/}
+          {/*  <div className={css(styles.project_link_alt)}>*/}
+          {/*    <span*/}
+          {/*      style={{ color: "#000", fontSize: "14px", fontWeight: "bold" }}*/}
+          {/*    >*/}
+          {/*      VISIT:{" "}*/}
+          {/*    </span>{" "}*/}
+          {/*    http://bit.ly/bwe0*/}
+          {/*  </div>*/}
+          {/*</div>*/}
         </div>
       </>
     );
