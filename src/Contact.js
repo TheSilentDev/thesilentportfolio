@@ -30,6 +30,40 @@ class Contact extends Component {
         });
   };
 
+  handleSubmit = async e => {
+    e.preventDefault();
+
+    const { email, subject, message } = this.state;
+
+    if (!email) {
+      return;
+    }
+
+    const data = {
+      email,
+      subject,
+      body: message
+    };
+
+    return fetch(
+      "https://jgph70bhr7.execute-api.us-east-1.amazonaws.com/prod/contact",
+      {
+        method: "POST", // *GET, POST, PUT, DELETE, etc.
+        mode: "cors", // no-cors, cors, *same-origin
+        cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+        credentials: "same-origin", // include, *same-origin, omit
+        headers: {
+          "Content-Type": "application/json"
+          // 'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        redirect: "follow", // manual, *follow, error
+        referrer: "no-referrer", // no-referrer, *client
+        body: JSON.stringify(data) // body data type must match "Content-Type" header
+      }
+    )
+      .then(response => response.json())
+      .then(result => console.log(result)); // parses JSON response into native JavaScript objects
+  };
   render() {
     const { email, subject, message, errors } = this.state;
     return (
@@ -37,7 +71,7 @@ class Contact extends Component {
         <div className={css(styles.page_name)}>CONNECT</div>
         <div className={css(styles.container)}>
           <div className={css(styles.form_layout)}>
-            <form className={css(styles.form)}>
+            <form onSubmit={this.handleSubmit} className={css(styles.form)}>
               <div className={css(styles.form_group)}>
                 <input
                   className={css(styles.form_input)}
