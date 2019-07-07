@@ -1,23 +1,28 @@
-import React, {Component} from 'react'
-import {StyleSheet, css} from "aphrodite";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import TextLoop from 'react-text-loop'
-import './home.css'
-import {PRIMARY_FONT, SECONDARY_FONT, PROJECT_NAME_COLOR, PROJECT_LINK_COLOR} from "./CommonStyles";
+import React, { Component } from "react";
+import { StyleSheet, css } from "aphrodite";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import TextLoop from "react-text-loop";
+import "./home.css";
+import {
+  PRIMARY_FONT,
+  SECONDARY_FONT,
+  PROJECT_NAME_COLOR,
+  PROJECT_LINK_COLOR
+} from "./CommonStyles";
 
 const backEndSkills = ["NODE", "AWS", "FIREBASE"];
 
 class Home extends Component {
   constructor() {
     super();
-    this.state = {skillsIndex: 0}
+    this.state = { skillsIndex: 0 };
   }
 
   componentDidMount() {
     this.timeout = setInterval(() => {
       let currentIndex = this.state.skillsIndex;
-      this.setState({skillsIndex: currentIndex + 1})
-    }, 2000)
+      this.setState({ skillsIndex: currentIndex + 1 });
+    }, 2000);
   }
 
   componentWillUnmount() {
@@ -28,18 +33,15 @@ class Home extends Component {
     let skillSet = backEndSkills[this.state.skillsIndex % backEndSkills.length];
     return (
       <>
-        <div className={css(styles.page_name)}>
-          INTRODUCTION
-        </div>
+        <div className={css(styles.page_name)}>INTRODUCTION</div>
         <div className={css(styles.container)}>
           <div className={css(styles.home)}>
-
             <div className={css(styles.skillSet)}>
-              I <span style={{}}>REACT </span> TO {" "}
+              I <span style={{}}>REACT </span> TO{" "}
               <TextLoop>
-                <span style={{color: PROJECT_NAME_COLOR}}>NODE</span>
-                <span style={{color: "#ff9900"}}>AWS</span>
-                <span style={{color: "#FFA611"}}>FIREBASE</span>
+                <span style={{ color: PROJECT_NAME_COLOR }}>NODE</span>
+                <span style={{ color: "#ff9900" }}>AWS</span>
+                <span style={{ color: "#FFA611" }}>FIREBASE</span>
               </TextLoop>
             </div>
 
@@ -48,35 +50,32 @@ class Home extends Component {
             </div>
 
             <div className={css(styles.social_links)}>
-              <FontAwesomeIcon
-              size={'2x'}
-
-              className={css(styles.social_items)}
-              icon={["fab", "github"]}
-              />
-              <FontAwesomeIcon
-                size={'2x'}
-
-                className={css(styles.social_items)}
-                icon={["fab", "facebook-f"]}
-              />
-              <FontAwesomeIcon
-                size={'2x'}
-
-                className={css(styles.social_items)}
-                icon={["fab", "twitter"]}
-              />
-              <FontAwesomeIcon
-                size={'2x'}
-
-                className={css(styles.social_items)}
-                icon={["fab", "instagram"]}
-              />
+              <a href={"https://github.com/TheSilentDev"}>
+                <FontAwesomeIcon
+                  size={"2x"}
+                  className={css(styles.social_items)}
+                  icon={["fab", "github"]}
+                />
+              </a>
+              <a href={"https://twitter.com/thesilentdev_me"}>
+                <FontAwesomeIcon
+                  size={"2x"}
+                  className={css(styles.social_items)}
+                  icon={["fab", "twitter"]}
+                />
+              </a>
+              <a href={"https://www.instagram.com/thesilentdev/"}>
+                <FontAwesomeIcon
+                  size={"2x"}
+                  className={css(styles.social_items)}
+                  icon={["fab", "instagram"]}
+                />
+              </a>
             </div>
           </div>
         </div>
       </>
-    )
+    );
   }
 }
 
@@ -84,7 +83,7 @@ const styles = StyleSheet.create({
   container: {
     maxWidth: "900px",
     marginLeft: "auto",
-    marginRight: "auto",
+    marginRight: "auto"
   },
   page_name: {
     position: "fixed",
@@ -95,13 +94,13 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     fontFamily: "'Comfortaa', cursive",
 
-    '@media all and (max-width: 575px)': {
+    "@media all and (max-width: 575px)": {
       display: "none"
     },
-    '@media all and (max-width: 768px)': {
+    "@media all and (max-width: 768px)": {
       display: "none"
     },
-    '@media all and (max-width: 1199px)': {
+    "@media all and (max-width: 1199px)": {
       display: "none"
     }
   },
@@ -114,7 +113,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     height: "600px",
     border: "7px solid rgba(0,0,0,1)",
-    '@media all and (max-width: 575px)': {
+    "@media all and (max-width: 575px)": {
       border: "none",
       width: "100%",
       flexDirection: "column",
@@ -133,7 +132,7 @@ const styles = StyleSheet.create({
     padding: "10px",
     background: "#f5f5f5",
     fontFamily: PRIMARY_FONT,
-    '@media all and (max-width: 575px)': {
+    "@media all and (max-width: 575px)": {
       position: "relative"
     }
   },
@@ -143,7 +142,7 @@ const styles = StyleSheet.create({
     fontSize: "44px",
     fontFamily: PRIMARY_FONT,
     letterSpacing: 7,
-    '@media all and (max-width: 575px)': {
+    "@media all and (max-width: 575px)": {
       textAlign: "center",
       lineHeight: 1.4
     }
@@ -156,7 +155,7 @@ const styles = StyleSheet.create({
     marginRight: "-20px",
     background: "#f5f5f5",
     padding: "15px",
-    '@media all and (max-width: 575px)': {
+    "@media all and (max-width: 575px)": {
       position: "relative"
     }
   },
@@ -164,4 +163,4 @@ const styles = StyleSheet.create({
     margin: "0 10px"
   }
 });
-export default Home
+export default Home;
