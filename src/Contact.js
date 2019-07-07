@@ -14,6 +14,7 @@ class Contact extends Component {
     email: "",
     subject: "",
     message: "",
+    sent: false,
     errors: {
       email: "",
       subject: "",
@@ -62,10 +63,10 @@ class Contact extends Component {
       }
     )
       .then(response => response.json())
-      .then(result => console.log(result)); // parses JSON response into native JavaScript objects
+      .then(result => this.setState({ sent: true })); // parses JSON response into native JavaScript objects
   };
   render() {
-    const { email, subject, message, errors } = this.state;
+    const { email, subject, message, errors, sent } = this.state;
     return (
       <>
         <div className={css(styles.page_name)}>CONNECT</div>
@@ -114,6 +115,17 @@ class Contact extends Component {
                 </button>
               </div>
             </form>
+            {sent && (
+              <div
+                style={{
+                  color: "#4CAF50",
+                  fontWeight: "bold",
+                  fontSize: "20px"
+                }}
+              >
+                Your message has been sent successfully.
+              </div>
+            )}
           </div>
         </div>
       </>
