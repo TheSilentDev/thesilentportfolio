@@ -41,7 +41,7 @@ class Home extends Component {
               <TextLoop>
                 <span style={{ color: PROJECT_NAME_COLOR }}>NODE</span>
                 <span style={{ color: "#ff9900" }}>AWS</span>
-                <span style={{ color: "#FFA611" }}>FIREBASE</span>
+                {/*<span style={{ color: "#FFA611" }}>FIREBASE</span>*/}
               </TextLoop>
             </div>
 
