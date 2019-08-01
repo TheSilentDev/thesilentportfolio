@@ -63,7 +63,8 @@ class Contact extends Component {
       }
     )
       .then(response => response.json())
-      .then(result => this.setState({ sent: true })); // parses JSON response into native JavaScript objects
+      .then(result => this.setState({ sent: true }))
+      .then(() => this.props.history.push("/")); // parses JSON response into native JavaScript objects
   };
   render() {
     const { email, subject, message, errors, sent } = this.state;
