@@ -3,14 +3,7 @@ import { StyleSheet, css } from "aphrodite";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import TextLoop from "react-text-loop";
 import "./home.css";
-import {
-  PRIMARY_FONT,
-  SECONDARY_FONT,
-  PROJECT_NAME_COLOR,
-  PROJECT_LINK_COLOR
-} from "./CommonStyles";
-
-const backEndSkills = ["NODE", "AWS", "FIREBASE"];
+import { PRIMARY_FONT, PROJECT_NAME_COLOR } from "./CommonStyles";
 
 class Home extends Component {
   constructor() {
@@ -30,7 +23,6 @@ class Home extends Component {
   }
 
   render() {
-    let skillSet = backEndSkills[this.state.skillsIndex % backEndSkills.length];
     return (
       <>
         <div className={css(styles.page_name)}>INTRODUCTION</div>

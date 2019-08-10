@@ -3,9 +3,7 @@ import { StyleSheet, css } from "aphrodite";
 import {
   PRIMARY_BG_COLOR,
   PRIMARY_FONT,
-  PRIMARY_TEXT_COLOR,
-  PROJECT_NAME_COLOR,
-  SECONDARY_FONT
+  PROJECT_NAME_COLOR
 } from "./CommonStyles";
 import * as EmailValidator from "email-validator";
 
@@ -63,7 +61,7 @@ class Contact extends Component {
       }
     )
       .then(response => response.json())
-      .then(result => this.setState({ sent: true }))
+      .then(() => this.setState({ sent: true }))
       .then(() => this.props.history.push("/")); // parses JSON response into native JavaScript objects
   };
   render() {

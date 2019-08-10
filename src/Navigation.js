@@ -30,12 +30,15 @@ export default function Navigation(props) {
           PORTFOLIO
         </div>
       </Link>
-      <div
-        onClick={() => props.toggle(false)}
-        className={css(styles.navigation_item)}
-      >
-        BLOG
-      </div>
+      <a href="https://tsdinteractive.com">
+        <div
+          onClick={() => props.toggle(false)}
+          className={css(styles.navigation_item)}
+        >
+          BLOG
+        </div>
+      </a>
+
       <Link to="/contact">
         <div
           onClick={() => props.toggle(false)}

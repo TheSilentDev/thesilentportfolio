@@ -28,7 +28,11 @@ class Portfolio extends Component {
               </div>
             </div>
             <div className={css(styles.project_image_layout)}>
-              <img className={css(styles.project_image)} src={samplepic} />
+              <img
+                alt={"Personal Portfolio"}
+                className={css(styles.project_image)}
+                src={samplepic}
+              />
             </div>
             <div className={css(styles.project_link)}>
               <span
